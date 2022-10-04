@@ -1,17 +1,17 @@
 import java.util.Scanner;
-class primeaverage
+class prime
 {
     public static boolean isPrime(int n)
     {
         if(n<2)
-          return false;
-        int c=0;
+        return false;
+        int count=0;
         for(int i=2;i<=(int)Math.sqrt(n);i++)
         {
             if(n%i==0)
-            c++;
+             count++;
         }
-        if(c==0)
+        if(count==0)
          return true;
         else
          return false;
@@ -19,28 +19,25 @@ class primeaverage
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
-        int n,x[],i,sum=0,c=0;
+        int n,x[],count=0,sum=0;
+        float avg=0;
         n=sc.nextInt();
         x=new int[n];
-        for(i=0;i<n;i++)
-         x[i]=sc.nextInt();
+        for(int i=0;i<n;i++)
         
-           
-        for(i=0;i<n;i++)
+            x[i]=sc.nextInt();
+            
+        
+        for(int i=0;i<n;i++)
         {
-            if (isPrime(x[i]))
+            if(isPrime(x[i]))
             {
-        
-                 sum=sum+x[i];
-                  c++;
-      
+                sum=sum+x[i];
+                 count++;
+            }
            
-             }
-      
+            
         }
-           
-
-      
-        System.out.format("%.2f",(float)sum/c);
+        System.out.format("%.2f",(float)sum/count);
     }
 }
