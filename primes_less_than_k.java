@@ -1,10 +1,10 @@
 import java.util.Scanner;
-class Prime
+class prime
 {
     public static boolean isPrime(int n)
     {
         if(n<2)
-         return false;
+        return false;
         int count=0;
         for(int i=2;i<=(int)Math.sqrt(n);i++)
         {
@@ -13,28 +13,30 @@ class Prime
         }
         if(count==0)
          return true;
-        else 
+        else
          return false;
     }
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
-        int x[],i,n,k,c=0;
+        int n,x[],count=0,k;
         n=sc.nextInt();
         x=new int[n];
-        for(i=0;i<n;i++)
+        for(int i=0;i<n;i++)
         
             x[i]=sc.nextInt();
             k=sc.nextInt();
         
-        for(i=0;i<n;i++)
+        for(int i=0;i<n;i++)
         {
             if(isPrime(x[i]))
             {
                 if(x[i]<=k)
-                  c++;
+                 count++;
+                
             }
+            
         }
-        System.out.println(c);
+        System.out.println(count);
     }
 }
