@@ -1,8 +1,10 @@
 import java.util.Scanner;
-class primepalindrome
+class sum
 {
     public static boolean isPrime(int n)
     {
+        if(n<2)
+         return false;
         int count=0;
         for(int i=2;i<=(int)Math.sqrt(n);i++)
         {
@@ -16,8 +18,7 @@ class primepalindrome
     }
     public static boolean isPalindrome(int n)
     {
-        int temp=n;
-        int sum=0,r;
+        int temp=n,sum=0,r;
         while(n>0)
         {
             r=n%10;
@@ -25,23 +26,27 @@ class primepalindrome
             n=n/10;
         }
         if(temp==sum)
-          return true;
+         return true;
         else
-          return false;
+         return false;
     }
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
-        int a,i;
-        a=sc.nextInt();
-        
-        for(i=a+1; ;i++)
+        int n;
+        n=sc.nextInt();
+        for(int i=n+1; ;i++)
         {
-            if((isPrime(i))&&(isPalindrome(i)))
+            if(isPrime(i) && isPalindrome(i))
             {
                 System.out.println(i);
-                break;
+                 break;
             }
+             
+            
         }
+        
+       
+       
     }
 }
