@@ -1,32 +1,34 @@
 import java.util.Scanner;
-class prime
+class sum
 {
     public static boolean isPrime(int n)
     {
         if(n<2)
          return false;
-        int c=0;
+        int count=0;
         for(int i=2;i<=(int)Math.sqrt(n);i++)
         {
             if(n%i==0)
-             c++;
+             count++;
         }
-        if(c==0)
-          return true;
+        if(count==0)
+         return true;
         else
-          return false;
+         return false;
     }
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
-        int m,n,c=0;
-        m=sc.nextInt();
+        int n,m,c=0;
         n=sc.nextInt();
-        for(int i=m;i<=n;i++)
+        m=sc.nextInt();
+        for(int i=n;i<=m;i++)
         {
-            if (isPrime(i))
+            if(isPrime(i))
              c++;
         }
         System.out.println(c);
+       
+       
     }
 }
